@@ -20,6 +20,6 @@ sealed class Screen(
     object About : Screen("about", "About", Icons.Filled.Info, Icons.Outlined.Info)
 
     companion object {
-        val bottomNavScreens = listOf(Home, Drivers, Equalizer, Effects, Device)
+        val bottomNavScreens = listOf(Home, Drivers, Equalizer, Effects, About)
     }
 }

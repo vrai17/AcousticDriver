@@ -247,7 +247,9 @@ fun AppNavHost(
             }
 
             composable(Screen.About.route) {
-                AboutScreen()
+                AboutScreen(
+                    onNavigateToDevice = { navController.navigate(Screen.Device.route) }
+                )
             }
         }
     }
