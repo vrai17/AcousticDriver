@@ -1,0 +1,58 @@
+name: Auto Publish Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Extract Version
+        id: extract_version
+        run: |
+          if [ -n "${GITHUB_REF_NAME}" ] && [[ "${GITHUB_REF_NAME}" == v* ]]; then
+            VERSION="${GITHUB_REF_NAME}"
+          else
+            VERSION=$(grep 'versionName = ' app/build.gradle.kts | head -n 1 | sed -E 's/.*versionName = "([^"]+)".*/v\1/')
+          fi
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "Detected version: ${VERSION}"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RELEASE_TITLE="Acoustic Driver ${VERSION}"
+          RELEASE_NOTES="### Acoustic Driver ${VERSION}
+          
+          Modern Android Audio Tuning Platform & Legacy Acoustic Profile Manager.
+          
+          #### 📥 Installation
+          - Download \`app-release.apk\` below and install directly on your Android device (Android 9.0+).
+          
+          #### ☕ Support the Developer
+          - **Ko-fi**: [ko-fi.com/vraidev](https://ko-fi.com/vraidev)
+          - **Saweria**: [saweria.co/vraidev](https://saweria.co/vraidev)
+          
+          *Built with Jetpack Compose & DynamicsProcessing by Vrai-Dev (Diaz Reza).*"
+
+          # Check if release already exists, if so upload assets / update title, otherwise create
+          if gh release view "${VERSION}" >/dev/null 2>&1; then
+            echo "Release ${VERSION} exists. Updating title and assets..."
+            gh release edit "${VERSION}" --title "${RELEASE_TITLE}" --notes "${RELEASE_NOTES}"
+            gh release upload "${VERSION}" release/app-release.apk --clobber
+          else
+            echo "Creating new release ${VERSION}..."
+            gh release create "${VERSION}" release/app-release.apk \
+              --title "${RELEASE_TITLE}" \
+              --notes "${RELEASE_NOTES}"
+          fi

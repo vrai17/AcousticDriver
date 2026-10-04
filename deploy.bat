@@ -14,19 +14,21 @@ echo Select an action:
 echo.
 echo   [1] Push Source Code Update (Fast - No APK Rebuild)
 echo   [2] Build Release APK ^& Push Update (assembleRelease)
-echo   [3] Push Existing Commits Directly (git push origin main)
-echo   [4] Check Git Status
-echo   [5] Exit
+echo   [3] Publish Official GitHub Release (Titled with App Version)
+echo   [4] Push Existing Commits Directly (git push origin main)
+echo   [5] Check Git Status
+echo   [6] Exit
 echo.
-set /p CHOICE="Enter your choice (1-5): "
+set /p CHOICE="Enter your choice (1-6): "
 
 if "%CHOICE%"=="1" goto PUSH_SOURCE
 if "%CHOICE%"=="2" goto PUSH_APK
-if "%CHOICE%"=="3" goto PUSH_ONLY
-if "%CHOICE%"=="4" goto STATUS
-if "%CHOICE%"=="5" goto EXIT
+if "%CHOICE%"=="3" goto PUSH_RELEASE
+if "%CHOICE%"=="4" goto PUSH_ONLY
+if "%CHOICE%"=="5" goto STATUS
+if "%CHOICE%"=="6" goto EXIT
 echo.
-echo Invalid selection. Please choose 1, 2, 3, 4, or 5.
+echo Invalid selection. Please choose 1, 2, 3, 4, 5, or 6.
 timeout /t 2 >nul
 goto MENU
 
@@ -38,6 +40,11 @@ goto MENU
 :PUSH_APK
 cls
 call push_apk.bat
+goto MENU
+
+:PUSH_RELEASE
+cls
+call create_release.bat
 goto MENU
 
 :PUSH_ONLY
