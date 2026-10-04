@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0B0F14</color>
+    <color name="surface_dark">#161E27</color>
+    <color name="surface_variant">#1E293B</color>
+    <color name="cyber_cyan">#00F5D4</color>
+    <color name="cyber_cyan_dim">#00B4D8</color>
+    <color name="electric_ice">#48CAE4</color>
+    <color name="amber_warning">#FFB703</color>
+    <color name="accent_red">#EF476F</color>
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+</resources>

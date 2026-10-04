@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Acoustic Driver</string>
+    <string name="app_subtitle">Android Audio Tuning Platform</string>
+    <string name="dev_name">Vrai-Dev</string>
+    <string name="website_url">https://vraidev.com</string>
+    <string name="website_display">vraidev.com</string>
+    <string name="splash_loading">Initializing Audio HAL &amp; Effects Pipeline…</string>
+    <string name="notification_channel_name">Acoustic Audio Engine</string>
+    <string name="notification_channel_desc">Maintains active audio processing profiles and effects</string>
+</resources>

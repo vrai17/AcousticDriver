@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+app/build/
+.kotlin/
+captures/
+.externalNativeBuild
+.cxx
+*.hprof
+*.pyc
+
+# Keep the curated standalone release APK
+app/release/
+*.apk
+!release/app-release.apk
+*.aab
+
+# OS files
+Thumbs.db
+desktop.ini
