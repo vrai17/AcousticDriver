@@ -43,6 +43,11 @@ Captured directly from an active Android device (*Xiaomi 23049PCD8G* running And
 | <img src="Assets/screenshots/screenshot_eq.png" width="360" alt="10-Band Equalizer" /> | <img src="Assets/screenshots/screenshot_rack.png" width="360" alt="Audio Effects Rack" /> |
 | *±12 dB precision faders (31Hz–16kHz) with live frequency plot* | *MegaBass™, Surgical Vocal Clarity Booster & Dynamic Limiter* |
 
+| **Device Audiophile Diagnostics** | **About & Developer Support** |
+| :---: | :---: |
+| <img src="Assets/screenshots/screenshot_active.png" width="360" alt="Device Diagnostics" /> | <img src="Assets/screenshots/screenshot_about.png" width="360" alt="About & Support Screen" /> |
+| *Audio HAL, DSP pipeline & system effects audit* | *Vrai-Dev branding, Website & inline Ko-fi / Saweria donation links* |
+
 ---
 
 ## 1. Overview
