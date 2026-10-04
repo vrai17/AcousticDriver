@@ -45,7 +45,7 @@ Captured directly from an active Android device (*Xiaomi 23049PCD8G* running And
 
 | **Device Audiophile Diagnostics** | **About, Real Icons & Updates** |
 | :---: | :---: |
-| <img src="Assets/screenshots/screenshot_active.png" width="360" alt="Device Diagnostics" /> | <img src="Assets/screenshots/screenshot_about.png" width="360" alt="About & Support Screen" /> |
+| <img src="Assets/screenshots/screenshot_device.png" width="360" alt="Device Diagnostics" /> | <img src="Assets/screenshots/screenshot_about.png" width="360" alt="About & Support Screen" /> |
 | *Audio HAL, DSP pipeline & system effects audit* | *Vrai-Dev branding, real Ko-fi/Saweria icons, in-app update checker & diagnostics link* |
 
 ---
